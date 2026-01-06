@@ -38,6 +38,18 @@ python shutter_count.py -q image.arw
 python shutter_count.py --json image.arw
 ```
 
+## Docker で使う
+
+exiftoolをインストールしたくない場合はDockerを使えます。
+
+```bash
+# イメージをビルド
+docker build -t shutter-count .
+
+# 実行（画像ファイルのあるディレクトリをマウント）
+docker run --rm -v /path/to/images:/images shutter-count /images/image.arw
+```
+
 ## 対応カメラ
 
 - Sony (α7, α9, α1 など)
